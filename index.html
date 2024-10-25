@@ -5,92 +5,114 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>College Information</title>
     <style>
+        /* Base Style */
         body {
-            font-family: Arial, sans-serif;
-            background-color: #f4f4f4;
+            font-family: "Times New Roman", Times, serif;
+            font-size: 12px;
+            background-color: #f9f9f9;
+            color: #333;
             margin: 0;
             padding: 20px;
-            color: #333;
         }
+
+        /* Header Styling */
         header {
-            background: #007BFF;
-            color: #fff;
-            padding: 10px 0;
+            background: #003366;
+            color: #ffffff;
+            padding: 15px 0;
             text-align: center;
+            border-radius: 8px;
         }
+
         h1, h2, h3, h4 {
             margin: 0;
-            padding: 10px 0;
+            padding: 5px 0;
         }
         h1 {
-            font-size: 2.5em;
+            font-size: 24px;
+            font-weight: bold;
         }
         h2 {
-            font-size: 2em;
+            font-size: 18px;
+            font-weight: normal;
         }
-        h3 {
-            font-size: 1.75em;
-        }
-        h4 {
-            font-size: 1.5em;
-            color: #555;
-        }
+
+        /* Section Styling */
         section {
-            background: #fff;
-            border-radius: 5px;
-            padding: 20px;
-            margin: 20px 0;
+            background: #ffffff;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            padding: 15px;
+            margin-top: 20px;
             box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
         }
-        .command {
-            text-decoration: underline;
+        h3 {
+            font-size: 16px;
             font-weight: bold;
-            color: #007BFF;
+            color: #003366;
+            margin-top: 10px;
+        }
+        h4 {
+            font-size: 14px;
+            font-weight: normal;
+            color: #555;
+        }
+
+        /* Commands Styling */
+        .command {
+            font-weight: bold;
+            color: #003366;
+            display: inline-block;
+            width: 80px;
         }
         .explanation {
-            margin-left: 20px;
-            color: #666;
+            color: #555;
+            margin-left: 10px;
+            display: inline-block;
         }
+
+        /* Footer Styling */
         footer {
             text-align: center;
             margin-top: 20px;
-            font-size: 0.9em;
+            font-size: 11px;
             color: #888;
+            padding: 10px 0;
         }
     </style>
 </head>
 <body>
 
     <header>
-        <h1>GSSS Institute Of Engineering And Technology for Women (R) </h1>
-        <h2>Department of CSE(AI&ML)</h2>
+        <h1>GSSS Institute Of Engineering And Technology for Women (R)</h1>
+        <h2>Department of Computer Science (AI & ML)</h2>
     </header>
 
     <section>
         <h3>Subject: Unix System Programming</h3>
         <h4>Subject Code: BCS515C</h4>
 
-        <h2>Commands</h2>
+        <h3>Commands</h3>
         <p>
-            <span class="command">print()</span> - 
-            <span class="explanation">This command is used to output data to the console. For example, <code>print("Hello, World!")</code> will display "Hello, World!".</span>
+            <span class="command">print()</span>
+            <span class="explanation">Outputs data to the console. E.g., <code>print("Hello, World!")</code> displays "Hello, World!"</span>
         </p>
         <p>
-            <span class="command">if</span> - 
-            <span class="explanation">This command allows you to execute a block of code based on a condition. For example: <code>if x > 10:</code> will execute the following block if x is greater than 10.</span>
+            <span class="command">if</span>
+            <span class="explanation">Executes code based on a condition. E.g., <code>if x > 10:</code> runs if x is greater than 10.</span>
         </p>
         <p>
-            <span class="command">for</span> - 
-            <span class="explanation">This command is used for looping through a sequence (like a list or string). For example: <code>for i in range(5):</code> will iterate over the numbers 0 to 4.</span>
+            <span class="command">for</span>
+            <span class="explanation">Loops through a sequence. E.g., <code>for i in range(5):</code> iterates from 0 to 4.</span>
         </p>
         <p>
-            <span class="command">def</span> - 
-            <span class="explanation">This command is used to define a function. For example: <code>def my_function():</code> creates a function named <code>my_function</code>.</span>
+            <span class="command">def</span>
+            <span class="explanation">Defines a function. E.g., <code>def my_function():</code> creates a function named <code>my_function</code>.</span>
         </p>
     </section>
 
     <footer>
-        &copy; 2024 GSSS Institute Of Engineering And Technology for Women(R)
+        &copy; 2024 GSSS Institute Of Engineering And Technology for Women (R). All rights reserved.
     </footer>
 
 </body>
