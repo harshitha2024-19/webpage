@@ -3,117 +3,235 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>College Information</title>
+    <title>Unix Commands: Pathname and Relative Paths</title>
     <style>
-        /* Base Style */
+        /* Global Styles */
         body {
-            font-family: "Times New Roman", Times, serif;
-            font-size: 12px;
-            background-color: #f9f9f9;
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f7fc;
             color: #333;
-            margin: 0;
-            padding: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            flex-direction: column;
         }
 
-        /* Header Styling */
+        /* Header Styles */
         header {
-            background: #003366;
-            color: #ffffff;
-            padding: 15px 0;
-            text-align: center;
-            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            padding: 20px 40px;
+            background-color: transparent;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); 
         }
 
-        h1, h2, h3, h4 {
-            margin: 0;
-            padding: 5px 0;
+        .logo { display: flex; align-items: center; }
+
+        .logo img { width: 200px; height: auto; margin-right: 20px; border: none; outline: none; }
+
+        .logo-text {
+            font-size: 60px;
+            color: #6a0dad;
+            font-weight: bold;
+            text-transform: uppercase;
+            display: inline-block;
         }
-        h1 {
+
+        .geetha-info {
             font-size: 24px;
+            color: #6a0dad;
             font-weight: bold;
-        }
-        h2 {
-            font-size: 18px;
-            font-weight: normal;
+            margin-left: 0;
+            line-height: 1.2;
         }
 
-        /* Section Styling */
-        section {
-            background: #ffffff;
-            border: 1px solid #ddd;
-            border-radius: 8px;
-            padding: 15px;
+        .institution-info { font-size: 20px; color: #333; font-weight: normal; margin-top: 15px; }
+        .affiliated-info { font-size: 16px; color: #6a0dad; font-weight: normal; margin-top: 5px; }
+
+        .right-section { display: flex; flex-direction: column; align-items: flex-start; text-align: left; width: 50%; }
+
+        .accreditation { display: flex; justify-content: space-between; width: 100%; margin-top: 20px; }
+        .accreditation .column { flex: 1; padding: 0 20px; text-align: center; color: #333; }
+        .accreditation .column h3 { font-size: 24px; font-weight: bold; margin-bottom: 8px; }
+        .accreditation .column p { font-size: 16px; margin-top: 5px; }
+
+        /* Command Section Styling */
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+
+        .assignment-title {
+            text-align: center;
+            background: #ff6f61;
+            color: white;
+            padding: 12px;
+            font-size: 1.5em;
+            font-weight: bold;
             margin-top: 20px;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            border-radius: 6px;
         }
-        h3 {
+
+        .command-section {
+            margin: 30px auto;
+            background-color: #ffffff;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            width: 90%;
+            max-width: 950px;
+        }
+
+        .command-section:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+        }
+
+        h2 {
+            color: #3b4e80;
+            font-size: 30px;
+            margin-bottom: 15px;
+            border-bottom: 2px solid #e5e5e5;
+            padding-bottom: 5px;
+        }
+
+        .command-section p {
+            font-size: 18px;
+            line-height: 1.8;
+            color: #555;
+            margin-bottom: 15px;
+        }
+
+        .command-section pre {
+            background-color: #2d2f3c;
+            color: #f5f5f5;
+            padding: 20px;
+            border-radius: 8px;
+            font-family: 'Courier New', monospace;
+            overflow-x: auto;
             font-size: 16px;
-            font-weight: bold;
-            color: #003366;
-            margin-top: 10px;
-        }
-        h4 {
-            font-size: 14px;
-            font-weight: normal;
-            color: #555;
+            margin-top: 15px;
         }
 
-        /* Commands Styling */
-        .command {
-            font-weight: bold;
-            color: #003366;
-            display: inline-block;
-            width: 80px;
-        }
-        .explanation {
-            color: #555;
-            margin-left: 10px;
-            display: inline-block;
-        }
-
-        /* Footer Styling */
+        /* Footer Styles */
         footer {
             text-align: center;
-            margin-top: 20px;
-            font-size: 11px;
-            color: #888;
-            padding: 10px 0;
+            font-size: 14px;
+            color: #fff;
+            margin-top: 50px;
+            padding: 12px 0;
+            background-color: #333;
+            width: 100%;
+            border-radius: 8px;
+        }
+
+        footer a {
+            color: #5b6fe1;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+
+        /* Responsive Styles */
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 30px;
+            }
+
+            .command-section {
+                width: 95%;
+                padding: 20px;
+            }
         }
     </style>
 </head>
 <body>
+    <div class="container">
+        <!-- Header -->
+        <header>
+            <div class="logo">
+                <img src="https://gyaanarth.com/wp-content/uploads/2022/07/GSSS-Institute-of-Engineering-and-Technology-for-Women-GSSSIETW-Mysore.logo_.jpg" alt="GSSS Logo">
+                <div>
+                    <div class="logo-text">GSSS</div>
+                    <div class="geetha-info">Geetha Shishu</div>
+                    <div class="geetha-info">Shikshana Sangha (R)</div>
+                    <div class="institution-info">Institute of Engineering and Technology for Women</div>
+                    <div class="affiliated-info">(Affiliated to Visvesvaraya Technological University, Belagavi, Approved by AICTE New Delhi & Govt of Karnataka)</div>
+                </div>
+            </div>
 
-    <header>
-        <h1>GSSS Institute Of Engineering And Technology for Women (R)</h1>
-        <h2>Department of Computer Science (AI & ML)</h2>
-    </header>
+            <div class="right-section">
+                <div class="accreditation">
+                    <div class="column">
+                        <h3>NBA</h3>
+                        <p>Accredited Branches by NBA, New Delhi</p>
+                        <p>UG-ECE, CSE, ISE (Validity up to June 2026)</p>
+                        <p>UG-EEE (Validity up to June 2027)</p>
+                    </div>
+                    <div class="column">
+                        <h3>NAAC</h3>
+                        <p>Accredited with A Grade</p>
+                        <p>CET Code: E133</p>
+                        <p>COMEDK Code: E055</p>
+                    </div>
+                </div>
+            </div>
+        </header>
 
-    <section>
-        <h3>Subject: Unix System Programming</h3>
-        <h4>Subject Code: BCS515C</h4>
+        <!-- Unix Commands Content -->
+        <section>
+            <h3>Subject: Unix System Programming</h3>
+            <h4>Subject Code: BCS515C</h4>
 
-        <h3>Commands</h3>
-        <p>
-            <span class="command">print()</span>
-            <span class="explanation">Outputs data to the console. E.g., <code>print("Hello, World!")</code> displays "Hello, World!"</span>
-        </p>
-        <p>
-            <span class="command">if</span>
-            <span class="explanation">Executes code based on a condition. E.g., <code>if x > 10:</code> runs if x is greater than 10.</span>
-        </p>
-        <p>
-            <span class="command">for</span>
-            <span class="explanation">Loops through a sequence. E.g., <code>for i in range(5):</code> iterates from 0 to 4.</span>
-        </p>
-        <p>
-            <span class="command">def</span>
-            <span class="explanation">Defines a function. E.g., <code>def my_function():</code> creates a function named <code>my_function</code>.</span>
-        </p>
-    </section>
+            <div class="assignment-title">UNIX Assignment-1</div>
 
-    <footer>
-        &copy; 2024 GSSS Institute Of Engineering And Technology for Women (R). All rights reserved.
-    </footer>
+            <div class="command-section">
+                <h2>1. Pathname</h2>
+                <p>A pathname is a string that represents the location of a file or directory in the file system. It can be either an absolute or a relative pathname.</p>
+                <p>An absolute pathname starts from the root directory / and specifies the complete path to a file or directory, while a relative pathname is specified in relation to the current working directory.</p>
+                <pre>Usage (absolute path):
+$ /home/user/Documents/file.txt
+</pre>
+                <p>Example of relative path:</p>
+                <pre>Usage:
+$ Documents/file.txt
+</pre>
+            </div>
 
+            <div class="command-section">
+                <h2>2. The . (Current Directory)</h2>
+                <p>The . (dot) represents the current directory. It is often used in commands to refer to the directory you are currently in, or to execute programs in the current directory.</p>
+                <pre>Usage:
+$ ./script.sh
+</pre>
+                <p>In the example above, the ./ tells the system to execute the script.sh file from the current directory.</p>
+            </div>
+
+            <div class="command-section">
+                <h2>3. The .. (Parent Directory)</h2>
+                <p>The .. (double dot) represents the parent directory, or the directory one level above the current directory.</p>
+                <p>It is commonly used to navigate up the directory structure.</p>
+                <pre>Usage:
+$ cd ..
+</pre>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer>
+            <p>&copy; 2024 GSSS Institute of Engineering and Technology for Women</p>
+            <p><a href="https://www.gsss.ac.in" target="_blank">Visit Official Website</a></p>
+        </footer>
+    </div>
 </body>
 </html>
+
